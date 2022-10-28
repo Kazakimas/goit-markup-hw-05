@@ -98,39 +98,57 @@ section {
     display: flex;
     gap: 50px;
     margin-left: 93px;
+    
 }
 
 .header-list :hover, .header-list :focus {
     color: var(--accent-color);
+
 }
 
 .header-list .current {
     color: var(--accent-color);
 }
 
+
 .header-list .link{
     display: block;
     padding-top: 32px;
     padding-bottom: 32px;
+    position: relative;
 
 }
 
+.current::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;}
+
 .header-link {
+    position: relative;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--brand-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-connect :hover, .header-connect :focus {
     color: var(--accent-color);
+    
 }
 
 .header-connect {
     display: flex;
     gap: 50px;
     margin-left: auto;
+   
 }
 
 .header-mail {
@@ -140,6 +158,7 @@ section {
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--paragraph-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 
@@ -150,6 +169,7 @@ section {
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--paragraph-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 
@@ -206,8 +226,14 @@ section {
     color: var(--accent-text-color);
     background-color: var(--accent-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    
+    transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
+
+.hero-button:hover,
+.hero-button:focus {
+transform: scale(1.1);
+}
+
 
 /* ----------HERO------------ */
 
@@ -296,6 +322,20 @@ section {
     margin-right: 0;
 }
 
+/* .work-thumb {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(47, 48, 58, 0.8);
+
+}
+
+.work-thumb .work-post-title {
+    position: absolute;
+    bottom:  0;
+    right: 0;
+} */
+
 
 /* ----------ЩО РОБИМО------------ */
 
@@ -375,10 +415,12 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-soc-icon {
     fill: #AFB1B8;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -386,15 +428,14 @@ section {
 .team-soc-link:hover,
 .team-soc-link:focus {
     background-color: var(--accent-color);
+    
 }
 
-.team-soc-link:hover .team-soc-icon {
-    fill: var(--accent-text-color);
-}
-
+.team-soc-link:hover .team-soc-icon,
 .team-soc-link:focus .team-soc-icon {
     fill: var(--accent-text-color);
 }
+
 
 
 /* ----------КОМАНДА-------------- */
@@ -433,24 +474,25 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-icon {
     fill: #AFB1B8;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .clients-link:hover,
 .clients-link:focus {
     border-color: var(--accent-color);
+    
 }
 
-.clients-link:hover .clients-icon {
-    fill: var(--accent-color);
-}
-
+.clients-link:hover .clients-icon,
 .clients-link:focus .clients-icon {
     fill: var(--accent-color);
 }
+
 
 
 /* --------ПОСТІЙНІ КЛІЄНТИ-------- */
@@ -470,12 +512,14 @@ section {
 
 .footer-list :hover,
 .footer-list :focus {
-    color: var(--accent-color)
+    color: var(--accent-color);
+    
 }
 
 .footer-list {
     margin-top: 20px;
     gap: 10px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-item {
@@ -550,6 +594,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .invite-soc-icon {
@@ -561,6 +606,7 @@ section {
 .invite-soc-link:hover,
 .invite-soc-link:focus {
     background-color: var(--accent-color);
+    
 }
 
 
@@ -568,16 +614,20 @@ section {
 
 /* ----------ФІЛЬТРИ-------------- */
 
-.button-item :hover,
-.button-item :focus {
+.button-link:hover,
+.button-link:focus {
     color: var(--accent-text-color);
-    background: var(--accent-color);
+    background-color: var(--accent-color);
     box-shadow: 0px 2px 2px
     rgba(0, 0, 0, 0.12),
     0px 1px 2px
     rgba(0, 0, 0, 0.08),
     0px 3px 1px
-    rgba(0, 0, 0, 0.1)
+    rgba(0, 0, 0, 0.1);
+}
+
+.button-link {
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -658,9 +708,80 @@ rgba(0, 0, 0, 0.16),
 0px 4px 4px
 rgba(0, 0, 0, 0.06),
 0px 1px 1px
-rgba(0, 0, 0, 0.12)
+rgba(0, 0, 0, 0.12);
+
+}
+
+.project-link {
+transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* ----------ПРОЄКТИ-------------- */
+
+/* -----------МОДАЛКА------------- */
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: opacity 250ms linear, visibility 250ms linear;
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleY(1);
+    transform: translate(-50%, -50%) rotate(0);
+    transition: transform 500ms linear, border-radius 500ms linear;
+
+    min-height: 581px;
+    min-width: 528px;
+    border-radius: 4px;
+
+    background-color: var(--accent-text-color);
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.backdrop.is-hidden .modal{
+    transform: translate(-50%, -50%) scaleY(0);
+    transform:translate(-50%, -50%) rotate(-90deg);
+    border-radius: 50%;
+}
+
+.modal-close {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+    
+
+}
+
+.modal-close:hover,
+.modal-close:focus {
+ background-color: var(--accent-color);
+ fill: var(--accent-text-color);
 }
 
 
 
-/* ----------ПРОЄКТИ-------------- */
+/* -----------МОДАЛКА------------- */
